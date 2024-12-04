@@ -2,6 +2,9 @@ const config = require('./config.js');
 const keep_alive = require('./keep_alive.js');
 require("./bot.js");
 
+void loop();{
+  console.log("miku is working.")
+  delay(30000); }
 /*
 
   ________.__                        _____.___.___________
