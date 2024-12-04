@@ -1,4 +1,5 @@
 const config = require('./config.js');
+const keep_alive = require('./keep_alive.js');
 require("./bot.js");
 
 /*
