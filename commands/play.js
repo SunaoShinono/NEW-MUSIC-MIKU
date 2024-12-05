@@ -129,7 +129,7 @@ async function play(client, interaction) {
 
 module.exports = {
     name: "play",
-    description: "สามารถใส่เป็น ลิงค์ Playlist Youtube / ลิงค์ Youtube / ชื่อเพลง"
+    description: "Enter song name / link or playlist"
     permissions: "0x0000000000000800",
     options: [{
         name: 'name',
