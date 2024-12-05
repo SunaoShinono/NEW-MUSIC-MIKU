@@ -154,7 +154,7 @@ function setupCollector(client, player, channel, message) {
         if (!voiceChannel || voiceChannel.id !== playerChannel) {
             const vcEmbed = new EmbedBuilder()
                 .setColor(config.embedColor)
-                .setDescription('🔒 **You need to be in the same voice channel to use the controls!**');
+                .setDescription('🔒 **เหมือนว่านายท่านจะไม่ได้อยู่ห้องเดียวกับมิกุ จะคุมเพลง ก็เข้ามาห้องเดียวกับมิกุก่อนนะคะ**');
             const sentMessage = await channel.send({ embeds: [vcEmbed] });
             setTimeout(() => sentMessage.delete().catch(console.error), config.embedTimeout * 1000);
             return;
@@ -231,7 +231,7 @@ function adjustVolume(player, channel, amount) {
         sendEmbed(channel, amount > 0 ? '🔊 **เร่งเสียงสุดแล้วนะคะ ถ้ามากกว่านี้ คอมิกุจะไม่ไหวแล้วนะคะ**' : '🔉 **ลดเสียงลงต่ำสุดแล้วนะคะ มิกุไม่ได้ยินเสียงตัวเองแล้ววว**');
     } else {
         player.setVolume(newVolume);
-        sendEmbed(channel, `🔊 **ปรับระดับเสียงเป็น ${newVolume}%!**`);
+        sendEmbed(channel, `🔊 **ปรับระดับเสียงเป็น ${newVolume}% แล้วค่ะ**`);
     }
 }
 function formatTrack(track) {
@@ -251,17 +251,17 @@ function formatTrack(track) {
 
 function toggleLoop(player, channel) {
     player.setLoop(player.loop === "track" ? "queue" : "track");
-    sendEmbed(channel, player.loop === "track" ? "🔁 **Track loop is activated!**" : "🔁 **Queue loop is activated!**");
+    sendEmbed(channel, player.loop === "track" ? "🔁 **เล่นซ้ำปัจจุบันเพลงเดียวแล้วค่ะ**" : "🔁 **เล่นซ้ำทั้ง Playlist แล้วค่ะ**");
 }
 
 function disableLoop(player, channel) {
     player.setLoop("none");
-    sendEmbed(channel, "❌ **Loop is disabled!**");
+    sendEmbed(channel, "❌ **ปิดการเล่นวนซ้ำแล้ว**");
 }
 
 function showQueue(channel) {
     if (queueNames.length === 0) {
-        sendEmbed(channel, "The queue is empty.");
+        sendEmbed(channel, "กระดาษคิวเพลงอย่างโล่งเลยค่ะ");
         return;
     }
 
@@ -285,7 +285,7 @@ function showQueue(channel) {
     queueChunks.forEach(async (chunk) => {
         const embed = new EmbedBuilder()
             .setColor(config.embedColor)
-            .setDescription(`📜 **Queue:**\n${chunk}`);
+            .setDescription(`📜 **คิวเพลง:**\n${chunk}`);
         await channel.send({ embeds: [embed] }).catch(console.error);
     });
 }
