@@ -33,7 +33,7 @@ async function nowPlaying(client, interaction) {
 
         const npEmbed = new EmbedBuilder()
             .setColor(config.embedColor)
-            .setTitle('🎵 Now Playing')
+            .setTitle('🎵 กำลังเล่นเพลง')
             .setDescription(`[${player.current.info.title} - ${player.current.info.author}](${player.current.info.uri})\n\n${progressBar}`)
             .setThumbnail(player.current.info.thumbnail)
 
