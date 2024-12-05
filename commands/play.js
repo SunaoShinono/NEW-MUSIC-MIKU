@@ -32,8 +32,8 @@ async function play(client, interaction) {
         if (!interaction.member.voice.channelId) {
             const embed = new EmbedBuilder()
                 .setColor('#ff0000')
-                .setTitle('Voice Channel Required')
-                .setDescription('❌ You need to be in a voice channel to use this command.');
+                .setTitle('โปรดเข้าห้องเสียงก่อนค่ะ')
+                .setDescription('❓ มิกุไม่รู้ว่านายท่านอยากจะฟังเพลงห้องไหน โปรดเข้าห้องเสียงก่อน แล้วใช้คำสั่ง /play นะคะ');
 
             await interaction.reply({ embeds: [embed], ephemeral: true });
             return;
@@ -94,7 +94,7 @@ async function play(client, interaction) {
             const errorEmbed = new EmbedBuilder()
                 .setColor(config.embedColor)
                 .setTitle('Error')
-                .setDescription('❌ No results found.');
+                .setDescription('❌ ไม่เจอผลลัพธ์นะคะ ใส่อะไรผิดหรือเปล่า');
 
             await interaction.editReply({ embeds: [errorEmbed] });
             return;
@@ -103,12 +103,12 @@ async function play(client, interaction) {
         const randomEmbed = new EmbedBuilder()
             .setColor(config.embedColor)
             .setAuthor({
-                name: 'Request Update',
+                name: 'อัพเดทเพลงให้แล้วค่ะ',
                 iconURL: config.CheckmarkIcon,
                 url: config.SupportServer
             })
-            .setDescription('**➡️ Your request has been successfully processed.**\n**➡️ Please use buttons to control playback**')
-            .setFooter({ text: '🎶 Enjoy your music!' });
+            .setDescription('**➡️ เพลงของคุณได้ถูกเพิ่มลงไปแล้ว**\n**➡️ ใช้ปุ่มด้านล่าง เพื่อควบคุมเพลงได้เลยค่ะ**')
+            .setFooter({ text: '🎶 ขอให้สนุกกับเพลงนะคะ' });
 
         await interaction.followUp({ embeds: [randomEmbed] });
 
@@ -117,7 +117,7 @@ async function play(client, interaction) {
         const errorEmbed = new EmbedBuilder()
             .setColor('#ff0000')
             .setTitle('Error')
-            .setDescription('❌ An error occurred while processing your request.');
+            .setDescription('❌ เพลงที่ให้มาเหมือนจะขาดๆหายๆไปบางท่อน **โปรดใช้คำสั่ง /play อีกครั้งค่ะ**');
 
         if (interaction.deferred || interaction.replied) {
             await interaction.editReply({ embeds: [errorEmbed] });
@@ -129,7 +129,7 @@ async function play(client, interaction) {
 
 module.exports = {
     name: "play",
-    description: "Play a song from a name or link",
+    description: "สามารถใส่เป็น ลิงค์ Playlist Youtube / ลิงค์ Youtube / ชื่อเพลง"
     permissions: "0x0000000000000800",
     options: [{
         name: 'name',
