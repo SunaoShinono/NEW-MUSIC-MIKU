@@ -31,7 +31,7 @@ module.exports = {
   SupportServer: "https://discord.gg/xQF9f9yUEM",
   CheckmarkIcon: "https://cdn.discordapp.com/emojis/819446784647757834.gif",
   MusicIcon:"https://cdn.discordapp.com/emojis/763415718271385610.gif",
-  embedTimeout: 5,  // Timeout before the button interaction embeds are deleted ( Default - 5 seconds)
+  embedTimeout: 10,  // Timeout before the button interaction embeds are deleted ( Default - 5 seconds)
   errorLog: "", 
 
    // Lavalink Server Details
