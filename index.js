@@ -6,7 +6,7 @@ const message = "Miku has online on server.";
 
 setInterval(() => {
     console.log(message);
-    console.clear();
+    console.clear(message);
 }, 20000);
 
 /*
