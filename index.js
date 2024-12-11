@@ -5,8 +5,8 @@ require("./bot.js");
 const message = "Miku has online on server.";
 
 setInterval(() => {
-    console.clear(); 
     console.log(message);
+    console.clear();
 }, 20000);
 
 /*
