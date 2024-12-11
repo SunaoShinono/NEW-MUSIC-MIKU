@@ -38,10 +38,10 @@ module.exports = {
 
   nodes: [
     {
-        name: "ChalresNaig_Node_Backup",
-        host: "212.227.65.132",
-        port: 10296,
-        password: "charlesnaig-lavalink",
+        name: "ChalresNaig_Node",
+        host: "lavahatry4.techbyte.host",
+        port: 3000,
+        password: "NAIGLAVA-dash.techbyte.host",
         reconnectTimeout: 5000,
         reconnectTries: Infinity,
         secure: false
