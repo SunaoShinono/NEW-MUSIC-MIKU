@@ -2,9 +2,18 @@ const config = require('./config.js');
 const keep_alive = require('./keep_alive.js');
 require("./bot.js");
   
+const message = "Miku has online on server.";
+
+setInterval(() => {
+    console.clear(); 
+    console.log(message);
+}, 20000);
+
+/*
 setInterval(() => {
     console.log("Miku is running on server.");
-}, 30000);
+}, 30000); 
+*/
 
 
 /*
