@@ -38,9 +38,9 @@ module.exports = {
 
   nodes: [
     {
-        name: "Koi_Node_V3",
-        host: "lavav3.prplmoe.me",
-        port: 1164,
+        name: "Koi_Node_V4",
+        host: "lavav4.prplmoe.me",
+        port: 1118,
         password: "prplmoe.me",
         reconnectTimeout: 5000,
         reconnectTries: Infinity,
